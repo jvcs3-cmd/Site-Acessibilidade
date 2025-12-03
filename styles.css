@@ -1,0 +1,695 @@
+/* ===== VARIÁVEIS CSS PARA TEMAS ===== */
+@import url('https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap');
+
+:root {
+    /* Cores - Tema Claro */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #d4af37;
+    --header-text: #1a1a1a;
+    --nav-bg: #f5f1e8;
+    --nav-text: #333333;
+    --nav-hover: #c9a227;
+    --section-bg: #faf8f3;
+    --card-bg: #ffffff;
+    --card-border: #e8dcc8;
+    --button-bg: #d4af37;
+    --button-text: #1a1a1a;
+    --button-hover: #b8941e;
+    --link-color: #a67c00;
+    --link-visited: #7a5a00;
+    --footer-bg: #2c2416;
+    --footer-text: #d4af37;
+    --input-bg: #fffbf5;
+    --input-border: #d4af37;
+    --focus-color: #c9a227;
+
+    /* Espaçamento base */
+    --base-spacing: 1rem;
+    --line-height-base: 1.6;
+    
+    /* Tamanho de fonte base */
+    --font-size-base: 16px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-p: 1rem;
+}
+
+/* ===== OpenDyslexic @font-face (CDN fallback) ===== */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@master/fonts/OpenDyslexic3-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@master/fonts/OpenDyslexic3-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@master/fonts/OpenDyslexic3-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@master/fonts/OpenDyslexic3-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Tema Escuro */
+body.dark-theme {
+    --bg-color: #1a1714;
+    --text-color: #e8dcc8;
+    --header-bg: #8b6f47;
+    --header-text: #f5f1e8;
+    --nav-bg: #2c2416;
+    --nav-text: #d4af37;
+    --nav-hover: #d4af37;
+    --section-bg: #252420;
+    --card-bg: #2c2416;
+    --card-border: #4a4035;
+    --button-bg: #a67c00;
+    --button-text: #3d392e;
+    --button-hover: #d4af37;
+    --link-color: #e6c457;
+    --link-visited: #b8941e;
+    --footer-bg: #1a1714;
+    --footer-text: #d4af37;
+    --input-bg: #2c2416;
+    --input-border: #4a4035;
+    --focus-color: #e6c457;
+}
+
+/* Tema Alto Contraste */
+body.high-contrast-theme {
+    --bg-color: #000000;
+    --text-color: #ffff00;
+    --header-bg: #000000;
+    --header-text: #ffff00;
+    --nav-bg: #000000;
+    --nav-text: #ffff00;
+    --nav-hover: #00ff00;
+    --section-bg: #000000;
+    --card-bg: #000000;
+    --card-border: #ffff00;
+    --button-bg: #ffff00;
+    --button-text: #000000;
+    --button-hover: #00ff00;
+    --link-color: #00ff00;
+    --link-visited: #00ff00;
+    --footer-bg: #000000;
+    --footer-text: #ffff00;
+    --input-bg: #000000;
+    --input-border: #ffff00;
+    --focus-color: #00ff00;
+}
+
+/* ===== ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: var(--line-height-base);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo Dislexia: tenta usar OpenDyslexic, com ajustes visuais como fallback
+   se a fonte não carregar, aplicamos espaçamento/linha/peso para melhorar leitura */
+body.dyslexia-font {
+    font-family: 'OpenDyslexic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.95 !important;
+    letter-spacing: 0.02em !important;
+    word-spacing: 0.12em !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+body.dyslexia-font * {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+}
+
+/* Espaçamento aumentado para dislexia */
+body.increase-spacing {
+    --line-height-base: 2;
+    letter-spacing: 0.1em;
+}
+
+/* ===== SKIP LINK ===== */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: var(--base-spacing) 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--base-spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--base-spacing);
+}
+
+.logo-section h1 {
+    font-size: var(--font-size-h1);
+    margin: 0;
+    font-weight: bold;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.95;
+}
+
+/* ===== ACCESSIBILITY CONTROLS ===== */
+.accessibility-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 40px;
+}
+
+.control-btn:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+.control-btn:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+    border-color: var(--focus-color);
+}
+
+.control-btn.active {
+    background-color: var(--button-hover);
+    border-color: var(--focus-color);
+}
+
+/* ===== NAVEGAÇÃO ===== */
+nav {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 80px;
+    z-index: 40;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--base-spacing);
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--base-spacing);
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--nav-hover);
+    background-color: rgba(0, 102, 204, 0.1);
+    border-bottom-color: var(--nav-hover);
+    outline: 2px solid var(--focus-color);
+    outline-offset: -2px;
+}
+
+.nav-link.active {
+    color: var(--nav-hover);
+    border-bottom-color: var(--nav-hover);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--base-spacing);
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: calc(var(--base-spacing) * 3) 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.section-container {
+    width: 100%;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-top: -0.8rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(135deg, #d4af37, #a67c00);
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--base-spacing);
+}
+
+.hero-content p {
+    font-size: var(--font-size-p);
+    margin-bottom: var(--base-spacing);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--button-text);
+    color: var(--button-bg);
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--button-text);
+    cursor: pointer;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: transparent;
+    color: var(--button-text);
+    outline: 3px solid var(--button-text);
+    outline-offset: 2px;
+}
+
+/* ===== CARDS E GRIDS ===== */
+.features-grid,
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--base-spacing) * 2);
+    margin-top: var(--base-spacing);
+}
+
+.feature-card,
+.course-card {
+    background-color: var(--card-bg);
+    padding: var(--base-spacing);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover,
+.course-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.feature-card:focus-within,
+.course-card:focus-within {
+    outline: 3px solid var(--focus-color);
+}
+
+.feature-card h3,
+.course-card h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.feature-card p,
+.course-card p {
+    font-size: var(--font-size-p);
+    margin-bottom: var(--base-spacing);
+    flex-grow: 1;
+}
+
+/* COURSE LIST */
+.course-list {
+    list-style-position: inside;
+    margin-bottom: var(--base-spacing);
+    padding-left: 1rem;
+}
+
+.course-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== BUTTONS ===== */
+.course-button,
+.submit-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
+.course-button:hover,
+.submit-button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.02);
+}
+
+.course-button:focus,
+.submit-button:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+    border-color: var(--focus-color);
+}
+
+/* ===== ACCESSIBILITY FEATURES SECTION ===== */
+.accessibility-features-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+}
+
+/* ===== COURSES SECTION ===== */
+.courses-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+}
+
+/* ===== RESOURCES SECTION ===== */
+.resources-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+}
+
+.resources-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--base-spacing) * 2);
+}
+
+.resource-item {
+    background-color: var(--card-bg);
+    padding: var(--base-spacing);
+    border-radius: 8px;
+    border-left: 4px solid var(--button-bg);
+    transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resource-item h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.5rem;
+}
+
+.resource-item p {
+    font-size: var(--font-size-p);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: var(--font-size-p);
+    margin-bottom: var(--base-spacing);
+}
+
+.about-list {
+    list-style-position: inside;
+    margin: var(--base-spacing) 0;
+    padding-left: 1rem;
+}
+
+.about-list li {
+    margin-bottom: 0.8rem;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: var(--base-spacing);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+}
+
+.form-group {
+    margin-bottom: var(--base-spacing);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: var(--font-size-p);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: var(--font-size-p);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+    border-color: var(--focus-color);
+}
+
+#form-feedback {
+    margin-top: var(--base-spacing);
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+#form-feedback.success {
+    background-color: #90ee90;
+    color: #1a1a1a;
+}
+
+#form-feedback.error {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--base-spacing) 0;
+    margin-top: var(--base-spacing);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--base-spacing);
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.footer-content a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.footer-content a:hover,
+.footer-content a:focus {
+    text-decoration: none;
+    outline: 2px solid var(--focus-color);
+}
+
+/* ===== ACESSIBILIDADE - FOCUS VISÍVEL ===== */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* ===== MEDIA QUERIES - RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .accessibility-controls {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        border-bottom: none;
+        border-left: 4px solid transparent;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        border-left-color: var(--nav-hover);
+        border-bottom: none;
+    }
+
+    .nav-link.active {
+        border-left-color: var(--nav-hover);
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .features-grid,
+    .courses-grid,
+    .resources-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    header,
+    nav,
+    .accessibility-controls,
+    footer {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
+/* ===== MODO REDUZIDO DE MOVIMENTO ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== SUPORTE A CORES REDUZIDAS ===== */
+@media (prefers-contrast: more) {
+    body {
+        --card-border: #404040;
+    }
+
+    .control-btn {
+        border: 2px solid var(--text-color);
+    }
+}

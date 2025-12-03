@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site educacional acessível para todas as pessoas com temas, aumento de fonte e suporte completo">
+    <title>EduAcessível - Educação para Todos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='90' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Skip to main content link para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Header com controles de acessibilidade -->
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <h1>📚 EduAcessível</h1>
+                <p class="tagline">Educação Inclusiva para Todos</p>
+            </div>
+            
+            <div class="accessibility-controls" aria-label="Controles de acessibilidade">
+    <button id="font-increase-btn" class="control-btn" aria-label="Aumentar tamanho da fonte" title="Aumentar tamanho da fonte">
+        <span aria-hidden="true">A+</span>
+    </button>
+    <button id="font-decrease-btn" class="control-btn" aria-label="Diminuir tamanho da fonte" title="Diminuir tamanho da fonte">
+        <span aria-hidden="true">A-</span>
+    </button>
+    <button id="font-reset-btn" class="control-btn" aria-label="Redefinir tamanho da fonte" title="Redefinir tamanho da fonte">
+        <span aria-hidden="true">A</span>
+    </button>
+    <button id="theme-toggle-btn" class="control-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+        <span aria-hidden="true">🌙</span>
+    </button>
+    <button id="contrast-toggle-btn" class="control-btn" aria-label="Alto contraste" title="Alternar alto contraste">
+        <span aria-hidden="true">◐</span>
+    </button>
+
+    <!-- BOTÃO QUE FALTAVA — Espaçamento aumentado (útil para dislexia) -->
+    <button id="spacing-toggle-btn" class="control-btn" aria-label="Aumentar espaçamento (dislexia)" title="Aumentar espaçamento entre linhas e palavras">
+        <span aria-hidden="true">↕︎</span>
+    </button>
+
+
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list">
+            <li><a href="#home" class="nav-link active">Início</a></li>
+            <li><a href="#cursos" class="nav-link">Cursos</a></li>
+            <li><a href="#recursos" class="nav-link">Recursos</a></li>
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Home Section -->
+        <section id="home" class="section hero-section">
+            <div class="section-container">
+                <div class="hero-content">
+                    <h2>Bem-vindo à EduAcessível 🌟</h2>
+                    <p>Um lugar onde <strong>todos podem aprender</strong>, sem barreiras. Aqui você encontra uma educação inclusiva e acessível, feita para você.</p>
+                    <p>Seja qual for sua necessidade, temos os recursos certos para ajudar no seu caminho.</p>
+                    <a href="#cursos" class="cta-button">Explorar Cursos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos de Acessibilidade Section -->
+        <section class="section accessibility-features-section">
+            <div class="section-container">
+                <h2>Seus Superpoderes de Leitura 🦸</h2>
+                <p class="section-subtitle">Customize sua experiência do jeito que faz sentido para você</p>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3>🔤 Ajuste de Fonte</h3>
+                        <p>Quer letras maiores? Sem problema! Ajuste o tamanho das letras no seu ritmo.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>🌓 Tema Claro e Escuro</h3>
+                        <p>Escolha entre modo claro ou escuro. Sua visão vai agradecer, especialmente à noite.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>🔊 Leitor de Tela</h3>
+                        <p>Use leitores de tela como NVDA e JAWS sem problemas. Tudo funciona com teclado também.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>◐ Alto Contraste</h3>
+                        <p>Cores mais vibrantes para melhor visualização. Perfeito se você tem dificuldade em ver alguns tons.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>⬅➡ Espaçamento</h3>
+                        <p>Aumente o espaçamento entre linhas e palavras para melhor legibilidade. Útil para pessoas com dislexia.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Δ Modo Dislexia</h3>
+                        <p>Ativa uma fonte otimizada especialmente para pessoas com dislexia. Melhora significativamente a leitura.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>⌨️ Navegação por Teclado</h3>
+                        <p>Use só o teclado se quiser. TAB para navegar, ENTER para clicar. Simples assim.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cursos Section -->
+        <section id="cursos" class="section courses-section">
+            <div class="section-container">
+                <h2>O Que Você Quer Aprender? 📖</h2>
+                <p class="section-subtitle">Cursos gratuitos, acessíveis e feitos com amor</p>
+                <div class="courses-grid">
+                    <article class="course-card">
+                        <h3>Introdução à Informática</h3>
+                        <p>Aprenda os conceitos básicos de computadores e internet. Perfeito para iniciantes.</p>
+                        <ul class="course-list">
+                            <li>Partes do computador</li>
+                            <li>Sistema operacional</li>
+                            <li>Internet e navegadores</li>
+                            <li>Segurança na web</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso Introdução à Informática">Inscrever-se</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>Matemática Fundamental</h3>
+                        <p>Revise os conceitos essenciais de matemática para o dia a dia.</p>
+                        <ul class="course-list">
+                            <li>Operações básicas</li>
+                            <li>Frações e decimais</li>
+                            <li>Percentuais</li>
+                            <li>Aplicações práticas</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso Matemática Fundamental">Inscrever-se</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>Português e Escrita</h3>
+                        <p>Melhore suas habilidades de leitura e escrita em português.</p>
+                        <ul class="course-list">
+                            <li>Gramática essencial</li>
+                            <li>Ortografia</li>
+                            <li>Redação</li>
+                            <li>Leitura interpretativa</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso Português e Escrita">Inscrever-se</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>História e Cidadania</h3>
+                        <p>Entenda o passado para construir um futuro melhor.</p>
+                        <ul class="course-list">
+                            <li>História do Brasil</li>
+                            <li>Direitos humanos</li>
+                            <li>Cidadania</li>
+                            <li>Cultura e sociedade</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso História e Cidadania">Inscrever-se</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>Ciências Naturais</h3>
+                        <p>Explore os mistérios da natureza e do corpo humano.</p>
+                        <ul class="course-list">
+                            <li>Biologia humana</li>
+                            <li>Ecologia</li>
+                            <li>Química básica</li>
+                            <li>Saúde e bem-estar</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso Ciências Naturais">Inscrever-se</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>Arte e Criatividade</h3>
+                        <p>Desenvolva sua criatividade através de várias formas de arte.</p>
+                        <ul class="course-list">
+                            <li>Desenho básico</li>
+                            <li>Pintura</li>
+                            <li>Música</li>
+                            <li>Expressão artística</li>
+                        </ul>
+                        <button class="course-button" aria-label="Inscrever-se no curso Arte e Criatividade">Inscrever-se</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos Section -->
+        <section id="recursos" class="section resources-section">
+            <div class="section-container">
+                <h2>Tudo Que Você Precisa 💡</h2>
+                <p class="section-subtitle">Recursos feitos para facilitar seu aprendizado</p>
+                <div class="resources-list">
+                    <article class="resource-item">
+                        <h3>📖 Livros Digitais</h3>
+                        <p>Acesso a uma biblioteca completa de livros digitais em diversos temas educacionais. Todos com suporte a leitura de tela.</p>
+                    </article>
+                    <article class="resource-item">
+                        <h3>🎥 Vídeos Educacionais</h3>
+                        <p>Vídeos com legendas e descrições de áudio para pessoas surdas e cegas. Conteúdo de alta qualidade.</p>
+                    </article>
+                    <article class="resource-item">
+                        <h3>📝 Exercícios Práticos</h3>
+                        <p>Pratique seus conhecimentos com exercícios interativos. Feedback imediato e acessível.</p>
+                    </article>
+                    <article class="resource-item">
+                        <h3>💬 Fóruns de Discussão</h3>
+                        <p>Converse com outros alunos e professores. Ambiente acolhedor onde todas as dúvidas são bem-vindas.</p>
+                    </article>
+                    <article class="resource-item">
+                        <h3>🎯 Planos de Estudo</h3>
+                        <p>Receba planos personalizados de aprendizagem adaptados ao seu ritmo e necessidades.</p>
+                    </article>
+                    <article class="resource-item">
+                        <h3>📊 Progresso e Certificados</h3>
+                        <p>Acompanhe seu progresso e receba certificados ao completar cursos. Documento com acessibilidade garantida.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="section about-section">
+            <div class="section-container">
+                <h2>Quem Somos 🌟</h2>
+                <div class="about-content">
+                    <p>
+                        A EduAcessível nasceu de uma ideia simples mas poderosa: <strong>educação é um direito de todos</strong>. 
+                        Criamos este espaço porque acreditamos que a deficiência não deve ser barreira para aprender.
+                    </p>
+                    <p>
+                        Nós oferecemos ferramentas que realmente fazem diferença: fontes maiores, temas personalizados, 
+                        suporte completo para leitores de tela, e muito mais. Tudo foi testado e pensado para ser <strong>realmente acessível</strong>.
+                    </p>
+                    <p>
+                        O que nos move:
+                    </p>
+                    <ul class="about-list">
+                        <li><strong>🎯 Acessibilidade Real:</strong> Não é só sobre cumprir regras, é sobre fazer funcionar de verdade.</li>
+                        <li><strong>❤️ Inclusão Verdadeira:</strong> Você não é um caso especial, você é bem-vindo aqui.</li>
+                        <li><strong>📚 Aprendizado de Qualidade:</strong> Conteúdo claro, direto e feito pra você aprender.</li>
+                        <li><strong>🚀 Tecnologia a Serviço das Pessoas:</strong> Usamos o melhor da tecnologia para facilitar sua vida.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="section contact-section">
+            <div class="section-container">
+                <h2>Quer Falar Conosco? 💬</h2>
+                <p class="section-subtitle">Dúvidas, sugestões ou just to say hi? Estamos ouvindo!</p>
+                <form class="contact-form" aria-label="Formulário de contato">
+                    <div class="form-group">
+                        <label for="name">Nome Completo:</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    <div id="form-feedback" aria-live="polite" aria-atomic="true"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2025 EduAcessível - Educação para Todos. Todos os direitos reservados.</p>
+                <p>Desenvolvido com ♥ para acessibilidade e inclusão.</p>
+                <p>
+                    <a href="#acessibilidade-info">Declaração de Acessibilidade</a> | 
+                    <a href="#privacidade">Política de Privacidade</a> | 
+                    <a href="#termos">Termos de Uso</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
